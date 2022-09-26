@@ -2,7 +2,6 @@ package datos;
 
 import java.sql.*;
 
-
 public class Conexion {
 
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
@@ -12,23 +11,22 @@ public class Conexion {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
     }
-    
-    public static void close(ResultSet resulSet) throws SQLException
-    {
+
+    public static void close(ResultSet resulSet) throws SQLException {
         resulSet.close();
     }
-   //Opcion 1 
-    public static void close(Statement statement) throws SQLException
-    {
+    //Opcion 1 
+
+    public static void close(Statement statement) throws SQLException {
         statement.close();
     }
+
     //Opcion 2
-        public static void close(PreparedStatement statement) throws SQLException
-    {
+    public static void close(PreparedStatement statement) throws SQLException {
         statement.close();
     }
-    public static void close(Connection connection) throws SQLException
-    {
+
+    public static void close(Connection connection) throws SQLException {
         connection.close();
     }
 }
